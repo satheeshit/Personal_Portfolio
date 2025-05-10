@@ -1,0 +1,288 @@
+html {
+  scroll-behavior: smooth;
+}
+.typing-effect {
+  font-size: 1.2rem;
+  color: #444;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid;
+  width: 0;
+  animation: typing 4s steps(40, end) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero {
+  background: linear-gradient(to bottom, #f0f8ff, #ffffff);
+  padding: 5rem 2rem;
+  text-align: center;
+  box-shadow: inset 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+.tagline {
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: #222;
+}
+
+.highlight {
+  color: #007bff;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #444;
+  margin: 0.5rem 0;
+}
+
+.summary {
+  max-width: 600px;
+  margin: 1rem auto;
+  color: #555;
+}
+
+.btn.pulse {
+  background-color: #007bff;
+  color: white;
+  padding: 0.75rem 1.75rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.btn.pulse:hover {
+  transform: scale(1.05);
+  background-color: #0056b3;
+}
+
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar nav a {
+    margin: 0 0.5rem;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .navbar button {
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+  
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 1rem;
+    text-align: center;
+  }
+  
+  .profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+  
+  .section {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .skills span {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #f3f3f3;
+    border-radius: 20px;
+  }
+  
+  .projects-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-top: 2rem;
+  }
+  
+  .project-card {
+    background: #f7f7f7;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: left;
+  }
+  
+  .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .btn.green {
+    background: #28a745;
+  }
+  
+  .social-icons img {
+    width: 24px;
+    margin: 0 0.5rem;
+  }
+  
+  .note {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  body.dark {
+    background: #121212;
+    color: white;
+  }
+  
+  body.dark .navbar {
+    background: #1f1f1f;
+  }
+  
+  body.dark .section,
+  body.dark .project-card {
+    background: #1e1e1e;
+  }
+  
+  body.dark .skills span {
+    background: #2e2e2e;
+  }
+  .flash-message {
+    text-align: center;
+    background-color: #d4edda;
+    color: #155724;
+    padding: 1rem;
+    margin: 1rem auto;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    max-width: 500px;
+  }
+  .contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  .contact-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .contact-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .social-icons {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .social-icons a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .social-icons img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .resume-section {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #f9f9f9;
+  }
+  
+  .resume-card {
+    display: inline-block;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-view,
+  .btn-download {
+    display: inline-block;
+    margin: 1rem 0.5rem;
+    padding: 0.6rem 1.2rem;
+    text-decoration: none;
+    border-radius: 25px;
+    color: white;
+    background-color: #007bff;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-view:hover,
+  .btn-download:hover {
+    background-color: #0056b3;
+  }
+  .btn-small {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.4rem 0.8rem;
+    background-color: #28a745;
+    color: white;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-small:hover {
+    background-color: #1e7e34;
+  }
+    
+  
+  

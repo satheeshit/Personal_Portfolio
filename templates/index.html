@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Satheesh R - Portfolio</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+</head>
+<body>
+
+  <header class="navbar">
+    <h1>Satheesh R</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+      <button onclick="toggleDarkMode()">🌙</button>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <img src="{{ url_for('static', filename='assets/profile.png') }}" alt="Satheesh R" class="profile-img" />
+    <h2 class="tagline">Hi, I'm <span class="highlight">Satheesh R</span></h2>
+    <p class="typing-effect">Aspiring Data Scientist | Analytics Enthusiast | Lifelong Learner</p>
+    <p class="summary">I transform complex data into actionable insights through machine learning, analysis, and visualization.</p>
+    <a href="#projects" class="btn pulse">🚀 View My Work</a>
+  </section>
+  
+
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>I'm Satheesh R, a recent graduate with a strong passion for data science and analytics. 
+      I have hands-on experience in machine learning, data analysis, and data visualization,
+       and have completed several projects using tools like Python, SQL, Excel, and Tableau. 
+       I'm actively seeking entry-level roles or internship opportunities where I can apply my skills, contribute to data-driven decision-making, and continue growing as a data professional.
+
+    </p>
+    <div class="skills">
+      <span>Python</span>
+      <span>Machine learning</span>
+      <span>Deep learning</span>
+      <span>SQL</span>
+      <span>Excel</span>
+      <span>Tableau</span>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+  
+      <div class="project-card">
+        <h3>Credit Card Fraud Detection</h3>
+        <p>
+          <ul>
+            <li>Developed a real-time fraud detection model using <strong>SGDClassifier</strong>.</li>
+            <li>Achieved <strong>92% accuracy</strong> and reduced false positives by <strong>18%</strong>.</li>
+            <li>Deployed the model using <strong>Flask</strong>, showcasing end-to-end ML deployment skills.</li>
+          </ul>
+        </p>
+        <small>Tech Stack: Python, Pandas, Scikit-learn, Flask</small><br>
+        <a href="https://github.com/satheeshit/Credit_Card_Fraud_Detection" target="_blank" class="btn-small">🔗 View Code</a>
+      </div>
+  
+      <div class="project-card">
+        <h3>Crime Rate Prediction</h3>
+        <p>
+          <ul>
+            <li>Built a crime forecasting model using <strong>KNN</strong> and time series methods.</li>
+            <li>Applied feature engineering to improve accuracy to <strong>97%</strong>.</li>
+            <li>Performance: R² = <strong>0.98</strong>, MAE = <strong>5569.11</strong>, MSE = <strong>10666.44</strong>.</li>
+          </ul>
+        </p>
+        <small>Tech Stack: Python, Pandas, Matplotlib</small><br>
+        <a href="https://github.com/satheeshit/Crime_Rate_Prediction" target="_blank" class="btn-small">🔗 View Code</a>
+      </div>
+  
+      <div class="project-card">
+        <h3>My Personal Portfolio</h3>
+        <p>A responsive, multi-section personal website built using Flask, HTML, CSS, and JavaScript. Includes dark mode, contact form, and resume download.</p>
+        <small>Tech Stack: Flask, HTML, CSS, JavaScript</small><br>
+        <a href="https://github.com/satheeshit/Personal_Portfolio" class="btn-small" target="_blank">🔗 View Code</a>
+      </div>
+      
+  
+      <div class="project-card">
+        <h3>Intrusion Detection Using Deep Learning</h3>
+        <p>
+          <ul>
+            <li>Developed an IDS using a <strong>Multi-Layer Perceptron (MLP)</strong> neural network.</li>
+            <li>Trained on real-world datasets like <strong>UNSW-NB15</strong> with TensorFlow.</li>
+            <li>Achieved high accuracy through feature selection and performance tuning.</li>
+            <li>Successfully identified cyber threats with measurable precision.</li>
+          </ul>
+        </p>
+        <small>Tech Stack: Python, TensorFlow</small><br>
+        <a href="https://github.com/yourusername/project" target="_blank" class="btn-small">🔗 View Code</a>
+      </div>
+  
+    </div>
+  </section>
+  
+
+  <section id="resume" class="resume-section">
+    <h2>Resume</h2>
+    <div class="resume-card">
+      <p>You can view or download my resume below:</p>
+      <a href="{{ url_for('static', filename="Satheesh_DataScience_Resume.pdf") }}" target="_blank" class="btn-view">📄 View Resume</a>
+      <a href="{{ url_for('static', filename="Satheesh_DataScience_Resume.pdf") }}" download class="btn-download">⬇️ Download</a>
+    </div>
+  </section>
+  
+
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="flash-message">{{ messages[0] }}</div>
+  {% endif %}
+{% endwith %}
+
+<section id="contact" class="section">
+  <h2>Contact Me</h2>
+  <form class="contact-form" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <p class="note">Open to entry-level roles and internships in Data Science or Analytics.</p>
+  <div class="social-icons">
+    <a href="https://github.com/satheeshit" target="_blank">
+      <img src="{{ url_for('static', filename='assets/github.png') }}" alt="GitHub"/> GitHub
+    </a>
+    <a href="https://www.linkedin.com/in/satheesh-r-0b3850246/" target="_blank">
+      <img src="{{ url_for('static', filename='assets/linkedin.png') }}" alt="LinkedIn"/> LinkedIn
+    </a>
+    <a href="mailto:rsatheeshit@gmail.com">
+      <img src="{{ url_for('static', filename='assets/gmail.png') }}" alt="Email"/> Email
+    </a>
+  </div>
+</section>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
